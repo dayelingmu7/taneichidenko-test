@@ -180,8 +180,9 @@ section{padding:88px 0;}
     repeating-linear-gradient(135deg,var(--sky-2) 0 2px, var(--sky) 2px 14px);
   border:1px solid var(--sky-line);border-radius:6px;
   display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;
-  color:var(--steel);position:relative;
+  color:var(--steel);position:relative;overflow:hidden;
 }
+.photo-block img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .photo-block .tag{
   font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em;
   background:var(--navy);color:var(--white);padding:5px 10px;border-radius:2px;
@@ -227,7 +228,9 @@ section{padding:88px 0;}
   aspect-ratio:1/1;
   background:repeating-linear-gradient(135deg,var(--sky-2) 0 2px, var(--sky) 2px 14px);
   display:flex;align-items:center;justify-content:center;position:relative;
+  overflow:hidden;
 }
+.staff-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .staff-photo .tag{
   font-family:"Space Mono",monospace;font-size:10.5px;color:var(--steel);
   border:1px dashed var(--sky-line);padding:6px 10px;border-radius:2px;background:rgba(255,255,255,.7);
@@ -321,7 +324,7 @@ footer{background:var(--navy);color:#9FB1C9;padding:44px 0 28px;font-size:12.5px
 
 <header>
   <div class="nav">
-    <div class="logo"><img src="logo.png" alt="種市電工株式会社"></div>
+    <div class="logo"><img src="images/logo.png" alt="種市電工株式会社"></div>
     <ul class="navlinks">
       <li><a href="#">TOP</a></li>
       <li><a href="#">会社概要</a></li>
@@ -364,6 +367,7 @@ footer{background:var(--navy);color:#9FB1C9;padding:44px 0 28px;font-size:12.5px
 <section class="message sheet">
   <div class="wrap message-grid">
     <div class="photo-block">
+      <img src="images/message.jpg" alt="採用メッセージ写真" onerror="this.style.display='none'">
       <div class="tag">PHOTO — 現場写真 or 代表写真</div>
     </div>
     <div>
@@ -380,8 +384,8 @@ footer{background:var(--navy);color:#9FB1C9;padding:44px 0 28px;font-size:12.5px
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">BY THE NUMBERS — 数字で見る種市電工</div>
-      <h2>小さな会社ですが、<br>技術者の厚みには自信があります。</h2>
-      <p>従業員20名という規模だからこそ、一人ひとりの技術力と成長スピードが会社の力になります。</p>
+      <h2>資格と実績に裏付けられた、<br>確かな技術力。</h2>
+      <p>一人ひとりが高い技術力を持ち、資格取得にも力を入れてきたことが、この数字につながっています。</p>
     </div>
     <div class="stat-grid">
       <div class="stat-card"><div class="rivet tl"></div><div class="rivet br"></div>
@@ -402,7 +406,7 @@ footer{background:var(--navy);color:#9FB1C9;padding:44px 0 28px;font-size:12.5px
       <div class="stat-card"><div class="rivet tl"></div><div class="rivet br"></div>
         <div class="stat-num">20<sup>名</sup></div>
         <div class="stat-label">従業員数</div>
-        <div class="stat-note">少数精鋭で現場を動かすチーム</div>
+        <div class="stat-note">一人ひとりが現場を支える、頼れるチーム</div>
       </div>
       <div class="stat-card"><div class="rivet tl"></div><div class="rivet br"></div>
         <div class="stat-num">107<sup>日</sup></div>
@@ -428,13 +432,16 @@ footer{background:var(--navy);color:#9FB1C9;padding:44px 0 28px;font-size:12.5px
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">OUR TEAM — 社員紹介</div>
-      <h2>現場を支える、6人の技術者たち。</h2>
+      <h2>現場を支える、3人の技術者たち。</h2>
       <p>職種の異なるメンバーの素顔と1日の流れを、それぞれの紹介ページでご覧いただけます。</p>
     </div>
     <div class="staff-grid">
 
       <a href="./staff01.html" class="staff-card">
-        <div class="staff-photo"><span class="staff-cat">施工管理</span><span class="tag">PHOTO 01</span></div>
+        <div class="staff-photo">
+          <img src="images/staff01.jpg" alt="電気工事施工管理技術者 スタッフ写真" onerror="this.style.display='none'">
+          <span class="staff-cat">施工管理</span>
+        </div>
         <div class="staff-body">
           <div class="staff-role">電気工事施工管理技術者</div>
           <div class="staff-name">氏名：●●　●●（差替）</div>
@@ -443,34 +450,22 @@ footer{background:var(--navy);color:#9FB1C9;padding:44px 0 28px;font-size:12.5px
       </a>
 
       <a href="./staff01.html" class="staff-card">
-        <div class="staff-photo"><span class="staff-cat">施工管理</span><span class="tag">PHOTO 02</span></div>
+        <div class="staff-photo">
+          <img src="images/staff02.jpg" alt="電気主任技術者 スタッフ写真" onerror="this.style.display='none'">
+          <span class="staff-cat">電気主任技術者</span>
+        </div>
         <div class="staff-body">
-          <div class="staff-role">電気工事施工管理技術者</div>
+          <div class="staff-role">第2種・第3種電気主任技術者</div>
           <div class="staff-name">氏名：●●　●●（差替）</div>
           <div class="staff-arrow">紹介ページを見る</div>
         </div>
       </a>
 
       <a href="./staff01.html" class="staff-card">
-        <div class="staff-photo"><span class="staff-cat">電気主任技術者</span><span class="tag">PHOTO 03</span></div>
-        <div class="staff-body">
-          <div class="staff-role">第2種電気主任技術者</div>
-          <div class="staff-name">氏名：●●　●●（差替）</div>
-          <div class="staff-arrow">紹介ページを見る</div>
+        <div class="staff-photo">
+          <img src="images/staff03.jpg" alt="電気工事士（見習い） スタッフ写真" onerror="this.style.display='none'">
+          <span class="staff-cat">電気工事士</span>
         </div>
-      </a>
-
-      <a href="./staff01.html" class="staff-card">
-        <div class="staff-photo"><span class="staff-cat">電気主任技術者</span><span class="tag">PHOTO 04</span></div>
-        <div class="staff-body">
-          <div class="staff-role">第3種電気主任技術者</div>
-          <div class="staff-name">氏名：●●　●●（差替）</div>
-          <div class="staff-arrow">紹介ページを見る</div>
-        </div>
-      </a>
-
-      <a href="./staff01.html" class="staff-card">
-        <div class="staff-photo"><span class="staff-cat">電気工事士</span><span class="tag">PHOTO 05</span></div>
         <div class="staff-body">
           <div class="staff-role">電気工事士（見習い）</div>
           <div class="staff-name">氏名：●●　●●（差替）</div>
@@ -478,23 +473,6 @@ footer{background:var(--navy);color:#9FB1C9;padding:44px 0 28px;font-size:12.5px
         </div>
       </a>
 
-      <a href="./staff01.html" class="staff-card">
-        <div class="staff-photo"><span class="staff-cat">電気工事士</span><span class="tag">PHOTO 06</span></div>
-        <div class="staff-body">
-          <div class="staff-role">電気工事士（見習い）</div>
-          <div class="staff-name">氏名：●●　●●（差替）</div>
-          <div class="staff-arrow">紹介ページを見る</div>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="gallery-note">
-      <div class="ic">ADD</div>
-      <div>
-        <b>追加提案：現場フォトギャラリー／Instagram連携</b><br>
-        社員紹介だけでなく、日常の現場写真・社内イベントの様子をInstagramから自動反映するギャラリーを設置すると、「会社の雰囲気」がより伝わります。种市電工様のSNS運用状況に合わせて、後日ご提案します。
-      </div>
     </div>
   </div>
 </section>
@@ -576,7 +554,7 @@ footer{background:var(--navy);color:#9FB1C9;padding:44px 0 28px;font-size:12.5px
         <div class="faq-a"><span class="qm">A.</span>勤務地は洋野町種市の本社のみです。久慈市・八戸市方面からの通勤も可能ですので、通勤圏内の方はご相談ください。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="qm">Q.</span>女性でも活躍できる職場ですか？</div>
+        <div class="faq-q"><span class="qm">Q.</span>女性が活躍できる職場ですか？</div>
         <div class="faq-a"><span class="qm">A.</span>当社は岩手県より「いわて女性活躍認定企業」「いわて子育てにやさしい企業等」の認定を受けています。働きやすい職場環境づくりに継続して取り組んでいます。</div>
       </div>
       <div class="faq-item">
