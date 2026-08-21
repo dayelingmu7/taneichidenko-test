@@ -51,8 +51,9 @@ header{background:var(--white);border-bottom:1px solid var(--line);}
   aspect-ratio:3/4;border-radius:6px;border:1px solid var(--sky-line);
   background:repeating-linear-gradient(135deg,var(--sky-2) 0 2px,var(--sky) 2px 16px);
   display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;position:relative;
-  box-shadow:0 24px 50px -30px rgba(27,42,70,.25);
+  box-shadow:0 24px 50px -30px rgba(27,42,70,.25);overflow:hidden;
 }
+.photo-large img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .photo-large .tag{font-family:"Space Mono",monospace;font-size:11px;color:var(--steel);border:1px dashed var(--sky-line);padding:6px 12px;border-radius:2px;background:rgba(255,255,255,.7);}
 .role-tab{position:absolute;top:14px;left:14px;background:var(--navy);color:#fff;font-family:"Space Mono",monospace;font-size:10.5px;padding:5px 10px;border-radius:2px;letter-spacing:.05em;}
 .profile-copy h1{font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.5;margin-bottom:18px;color:var(--navy);}
@@ -114,7 +115,7 @@ footer{background:var(--navy);color:#9FB1C9;padding:36px 0;font-size:12px;text-a
 
 <header>
   <div class="nav">
-    <div class="logo"><img src="logo.png" alt="種市電工株式会社"></div>
+    <div class="logo"><img src="images/logo.png" alt="種市電工株式会社"></div>
     <a class="back" href="./index.html">← 採用情報トップへ戻る</a>
   </div>
 </header>
@@ -123,6 +124,7 @@ footer{background:var(--navy);color:#9FB1C9;padding:36px 0;font-size:12px;text-a
 <section class="profile-hero sheet">
   <div class="wrap profile-grid">
     <div class="photo-large">
+      <img src="images/staff01.jpg" alt="電気工事施工管理技術者 スタッフ写真" onerror="this.style.display='none'">
       <div class="role-tab">STAFF 01 — 施工管理</div>
       <div class="tag">PHOTO — 社員写真差替</div>
     </div>
@@ -236,7 +238,6 @@ footer{background:var(--navy);color:#9FB1C9;padding:36px 0;font-size:12px;text-a
       </div>
     </div>
 
-    <div class="note"><b>NOTE:</b> このページは6名分の社員紹介に共通して使えるテンプレートです。写真・キャッチコピー・コメント・キャリアパス・1日の流れの5項目を差し替えることで、施工管理／電気主任技術者／電気工事士（見習い）それぞれの実際の働き方に合わせたページを量産できます。</div>
   </div>
 </section>
 
