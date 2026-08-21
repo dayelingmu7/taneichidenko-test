@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社員紹介｜種市電工株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A46;
+  --navy-soft:#3D5A82;
+  --copper:#B5551F;
+  --copper-light:#D97F3E;
+  --sky:#EEF4FA;
+  --sky-2:#E1EBF5;
+  --sky-line:#CBDBEA;
+  --white:#FFFFFF;
+  --ink:#20242C;
+  --steel:#5C6572;
+  --line:#DCE2E8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--white);color:var(--ink);line-height:1.85;}
+h1,h2,h3,h4{font-family:"Zen Kaku Gothic New",sans-serif;color:var(--navy);}
+.mono{font-family:"Space Mono",monospace;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+.eyebrow{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.18em;color:var(--copper);
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;text-transform:uppercase;}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--copper);}
+.sheet{position:relative;}
+.sheet::before,.sheet::after{content:"+";position:absolute;font-family:"Space Mono",monospace;font-size:14px;color:var(--sky-line);top:18px;}
+.sheet::before{left:18px;} .sheet::after{right:18px;}
+
+header{background:var(--white);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1060px;margin:0 auto;}
+.logo{display:flex;align-items:center;}
+.logo img{height:30px;width:auto;display:block;}
+.back{color:var(--steel);font-size:13px;font-family:"Space Mono",monospace;}
+.back:hover{color:var(--copper);}
+
+/* ===== HERO PROFILE ===== */
+.profile-hero{background:linear-gradient(180deg,var(--white),var(--sky));padding:60px 0 84px;position:relative;overflow:hidden;}
+.profile-hero::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--sky-line) 1px,transparent 1px),linear-gradient(90deg,var(--sky-line) 1px,transparent 1px);
+  background-size:42px 42px;opacity:.5;mask-image:linear-gradient(180deg,rgba(0,0,0,.7),transparent 85%);}
+.profile-grid{position:relative;z-index:2;display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:end;}
+@media(max-width:820px){.profile-grid{grid-template-columns:1fr;}}
+.photo-large{
+  aspect-ratio:3/4;border-radius:6px;border:1px solid var(--sky-line);
+  background:repeating-linear-gradient(135deg,var(--sky-2) 0 2px,var(--sky) 2px 16px);
+  display:flex;align-items:flex-end;justify-content:center;padding-bottom:18px;position:relative;
+  box-shadow:0 24px 50px -30px rgba(27,42,70,.25);
+}
+.photo-large .tag{font-family:"Space Mono",monospace;font-size:11px;color:var(--steel);border:1px dashed var(--sky-line);padding:6px 12px;border-radius:2px;background:rgba(255,255,255,.7);}
+.role-tab{position:absolute;top:14px;left:14px;background:var(--navy);color:#fff;font-family:"Space Mono",monospace;font-size:10.5px;padding:5px 10px;border-radius:2px;letter-spacing:.05em;}
+.profile-copy h1{font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.5;margin-bottom:18px;color:var(--navy);}
+.profile-copy h1 em{font-style:normal;color:var(--copper);border-bottom:3px solid var(--copper-light);}
+.profile-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;}
+.profile-meta div{font-family:"Space Mono",monospace;font-size:12px;color:var(--navy-soft);}
+.profile-meta b{display:block;color:var(--navy);font-size:16px;font-family:"Zen Kaku Gothic New",sans-serif;margin-top:4px;}
+
+/* ===== COMMENT ===== */
+section{padding:80px 0;}
+.comment{background:var(--white);}
+.comment-box{border-left:3px solid var(--copper);padding-left:26px;max-width:760px;}
+.comment-box p{font-size:15.5px;color:var(--ink);margin-bottom:16px;}
+.comment-box p:first-child{font-size:19px;font-weight:700;line-height:1.9;color:var(--navy);}
+
+.section-head{max-width:640px;margin-bottom:48px;}
+.section-head h2{font-size:clamp(22px,3vw,28px);font-weight:900;}
+.section-head p{color:var(--steel);margin-top:12px;font-size:14px;}
+
+/* ===== CAREER PATH — circuit schematic ===== */
+.career{background:var(--sky);}
+.circuit-wrap{background:var(--white);border:1px solid var(--sky-line);border-radius:8px;padding:36px 30px;overflow-x:auto;}
+.career-legend{font-family:"Space Mono",monospace;font-size:11px;color:var(--steel);margin-top:20px;}
+
+/* ===== vertical timeline (キャリアパス／1日の流れ 共通) ===== */
+.vtimeline{position:relative;}
+.vt-item{display:grid;grid-template-columns:150px 28px 1fr;gap:20px;padding:24px 0;position:relative;}
+.vt-item:first-child{padding-top:4px;}
+.vt-label{text-align:right;padding-top:1px;}
+.vt-label .period{font-family:"Space Mono",monospace;font-size:12.5px;color:var(--copper);font-weight:700;display:block;margin-bottom:5px;}
+.vt-label .stage{font-weight:700;color:var(--navy);font-size:14.5px;line-height:1.5;}
+.vt-line-col{position:relative;display:flex;justify-content:center;}
+.vt-line-col::before{content:"";position:absolute;top:2px;bottom:-24px;left:50%;width:2px;background:var(--sky-line);transform:translateX(-50%);}
+.vt-item:last-child .vt-line-col::before{display:none;}
+.vt-dot{width:12px;height:12px;border-radius:50%;background:var(--copper);margin-top:3px;position:relative;z-index:2;border:3px solid var(--white);box-shadow:0 0 0 1px var(--sky-line);flex:none;}
+.vt-item.is-current .vt-dot{background:var(--navy);box-shadow:0 0 0 1px var(--navy);}
+.vt-desc{font-size:14px;color:var(--ink);line-height:1.9;padding-top:0;}
+@media(max-width:640px){
+  .vt-item{grid-template-columns:88px 22px 1fr;gap:12px;}
+  .vt-label .stage{font-size:12.5px;}
+  .vt-label .period{font-size:11px;}
+}
+
+/* ===== DAY FLOW — horizontal circuit ===== */
+.dayflow{background:var(--white);}
+.dayflow-wrap{border:1px solid var(--sky-line);border-radius:8px;padding:36px 24px;background:var(--sky);overflow-x:auto;}
+
+.back-to-list{text-align:center;padding:60px 0;background:var(--sky);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;font-weight:700;font-size:14.5px;border-radius:2px;background:var(--navy);color:#fff;}
+.btn:hover{background:var(--navy-soft);}
+
+.note{margin-top:26px;border:1px dashed var(--sky-line);border-radius:6px;padding:18px 20px;background:var(--sky);font-size:12.5px;color:var(--steel);}
+.note b{color:var(--copper);font-family:"Space Mono",monospace;}
+
+footer{background:var(--navy);color:#9FB1C9;padding:36px 0;font-size:12px;text-align:center;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo"><img src="logo.png" alt="種市電工株式会社"></div>
+    <a class="back" href="./index.html">← 採用情報トップへ戻る</a>
+  </div>
+</header>
+
+<!-- ===== PROFILE HERO ===== -->
+<section class="profile-hero sheet">
+  <div class="wrap profile-grid">
+    <div class="photo-large">
+      <div class="role-tab">STAFF 01 — 施工管理</div>
+      <div class="tag">PHOTO — 社員写真差替</div>
+    </div>
+    <div class="profile-copy">
+      <div class="eyebrow">STAFF INTERVIEW</div>
+      <h1>図面の線一本が、<br><em>まちの安心をつくる。</em></h1>
+      <div class="profile-meta">
+        <div>NAME<b>●● ●●（差替）</b></div>
+        <div>POSITION<b>電気工事施工管理技術者</b></div>
+        <div>LICENSE<b>1級電気工事施工管理技士</b></div>
+        <div>JOIN<b>20XX年入社</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMMENT ===== -->
+<section class="comment sheet">
+  <div class="wrap">
+    <div class="comment-box">
+      <p>「現場は、図面通りにいかないことの方が多いんです。だからこそ、事前の段取りと、職人さんとの会話が大事になります。」</p>
+      <p>入社当初は現場のことが右も左も分からず、先輩について回るだけの毎日でした。少しずつ施工図が読めるようになり、今では自分が担当する現場の工程を任されるまでになりました。数字が苦手でも、現場で身体を動かしながら覚えられたのが自分に合っていたと思います。［※実際のインタビュー内容に差し替えてください］</p>
+      <p>これから入る方には、資格の勉強と現場経験を両方積める環境があるので、焦らず一つずつ身につけていってほしいです。分からないことは何でも聞いてください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== キャリアパス（図で表示）===== -->
+<section class="career sheet">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">CAREER PATH — これまでのキャリアパス</div>
+      <h2>回路図のように、経験がひとつずつ接続していく。</h2>
+      <p>資格取得と現場経験を積み重ねながら、施工管理者としての役割を広げてきた歩みです。</p>
+    </div>
+
+    <div class="circuit-wrap">
+      <div class="vtimeline">
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">1年目</span><span class="stage">入社・現場研修期</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">先輩社員に同行しながら、工具の扱いや現場での動き方など施工の基礎を学びます。安全教育を受け、まずは現場のルールと段取りに慣れることを優先する期間です。</div>
+        </div>
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">3年目</span><span class="stage">資格取得・実務期</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">2級電気工事施工管理技士を取得し、小規模現場の代理人を任されるようになります。図面を読み、職人さんへの指示出しなど、自分で現場を動かす経験を積みます。</div>
+        </div>
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">5年目</span><span class="stage">設計関与期</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">積算や施工図の作成も担当するようになり、施工だけでなく設計段階から現場に関わる機会が増えます。原価管理など、現場運営の全体像を見る視野が広がります。</div>
+        </div>
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">8年目</span><span class="stage">現場代理人期</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">1級電気工事施工管理技士を取得。中規模現場の現場代理人として、工程・安全・品質のすべてに責任を持つ立場になります。</div>
+        </div>
+        <div class="vt-item is-current">
+          <div class="vt-label"><span class="period">現在</span><span class="stage">現場代理人・指導担当</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">複数の現場を横断的に見ながら、後輩の指導や新人教育も担当。これまで培った経験を、次の世代に伝えていく役割を担っています。</div>
+        </div>
+      </div>
+      <div class="career-legend">※ 年数・資格・担当内容は一例です。実際のキャリアに合わせて差し替えてください。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1日の流れ（図で表示）===== -->
+<section class="dayflow sheet">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A DAY IN THE JOB — 1日の流れ</div>
+      <h2>ある1日のスケジュール</h2>
+      <p>勤務時間は8:00〜17:30。現場までの移動を含めた、標準的な1日の流れです。</p>
+    </div>
+
+    <div class="dayflow-wrap">
+      <div class="vtimeline">
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">8:00</span><span class="stage">出社・朝礼</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">安全確認と当日の作業内容をメンバー全員で共有します。</div>
+        </div>
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">8:30</span><span class="stage">資材積込み</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">当日使用する部材・工具を確認し、社用車に積み込みます。</div>
+        </div>
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">9:00</span><span class="stage">現場へ移動</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">社用車で現場入り。現場が離れている日は移動時間に工程の確認も行います。</div>
+        </div>
+        <div class="vt-item is-current">
+          <div class="vt-label"><span class="period">9:30–16:30</span><span class="stage">施工・現場管理</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">進捗確認や職人さんとの打ち合わせを行いながら、施工管理を担当します。昼休憩を挟み、天候や現場状況に応じて段取りを調整します。</div>
+        </div>
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">17:00</span><span class="stage">帰社・日報作成</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">事務所に戻り、日報の作成と翌日の段取りを確認します。</div>
+        </div>
+        <div class="vt-item">
+          <div class="vt-label"><span class="period">17:30</span><span class="stage">退社</span></div>
+          <div class="vt-line-col"><div class="vt-dot"></div></div>
+          <div class="vt-desc">お疲れさまでした。繁忙期を除き、残業は少なめです。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note"><b>NOTE:</b> このページは6名分の社員紹介に共通して使えるテンプレートです。写真・キャッチコピー・コメント・キャリアパス・1日の流れの5項目を差し替えることで、施工管理／電気主任技術者／電気工事士（見習い）それぞれの実際の働き方に合わせたページを量産できます。</div>
+  </div>
+</section>
+
+<div class="back-to-list">
+  <a href="./index.html" class="btn">← 社員紹介一覧へ戻る</a>
+</div>
+
+<footer>種市電工株式会社　〒028-7913 岩手県九戸郡洋野町種市25-19-2　TEL：0194-65-3565</footer>
+
+</body>
+</html>
