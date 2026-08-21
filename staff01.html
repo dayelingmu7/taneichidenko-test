@@ -104,6 +104,18 @@ section{padding:80px 0;}
 .back-to-list{text-align:center;padding:60px 0;background:var(--sky);}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;font-weight:700;font-size:14.5px;border-radius:2px;background:var(--navy);color:#fff;}
 .btn:hover{background:var(--navy-soft);}
+.btn-primary{background:var(--copper);color:#fff;}
+.btn-primary:hover{background:var(--copper-light);}
+.btn-ghost{background:transparent;border:1px solid var(--navy);color:var(--navy);}
+.btn-ghost:hover{border-color:var(--copper);color:var(--copper);}
+
+/* ===== CONTACT ===== */
+.contact{background:linear-gradient(180deg,var(--sky),var(--white));text-align:center;}
+.contact h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin-bottom:16px;color:var(--navy);}
+.contact p{color:var(--steel);max-width:520px;margin:0 auto 34px;font-size:14.5px;}
+.contact-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.contact-info{margin-top:44px;display:flex;justify-content:center;gap:44px;flex-wrap:wrap;font-size:13px;color:var(--navy-soft);font-family:"Space Mono",monospace;}
+
 
 .note{margin-top:26px;border:1px dashed var(--sky-line);border-radius:6px;padding:18px 20px;background:var(--sky);font-size:12.5px;color:var(--steel);}
 .note b{color:var(--copper);font-family:"Space Mono",monospace;}
@@ -238,6 +250,23 @@ footer{background:var(--navy);color:#9FB1C9;padding:36px 0;font-size:12px;text-a
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact sheet" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">CONTACT — お問い合わせ</div>
+    <h2>この度は当社の求人にご興味をお持ちいただき、<br>誠にありがとうございます。</h2>
+    <p>面接をご希望の方は、履歴書を下記までご郵送ください。書類選考後、面接日をご連絡いたします。ご不明な点は、担当（林崎・内舘）までお気軽にお問い合わせください。</p>
+    <div class="contact-cta">
+      <a href="#" class="btn btn-primary">お問い合わせフォームへ</a>
+      <a href="tel:0194-65-3565" class="btn btn-ghost">TEL：0194-65-3565</a>
+    </div>
+    <div class="contact-info">
+      <div>〒028-7913 岩手県九戸郡洋野町種市25-19-2</div>
+      <div>E-MAIL：office@taneichidenko.co.jp</div>
+    </div>
   </div>
 </section>
 
